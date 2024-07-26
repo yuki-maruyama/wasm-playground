@@ -21,7 +21,7 @@ pub fn generate_mandelbrot(width: usize, height: usize) -> JsString {
             let c = Complex::new(x, y);
             let m = mandelbrot(c);
             let ch = match m {
-                m if m >= 0 && m < 10 => ' ',
+                m if m < 10 => ' ',
                 m if m >= 10 && m < 20 => '.',
                 m if m >= 20 && m < 40 => '*',
                 m if m >= 40 && m < 100 => 'o',
